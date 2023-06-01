@@ -13,60 +13,102 @@
     form {
       border: 1px solid black;
     }
-    /* label {
-      border: 1px solid black;
+    table {
+      border-collapse: collapse;
+      width: 100%;
     }
-    input {
+    td {
       border: 1px solid black;
-    } */
+      padding-right: 8px;
+    }
+    .label1{
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"],
+    textarea
+    {
+      width: 100%;
+    }
+    .button{
+      margin-top: 10px;
+      display: flex ;
+      justify-content: center;
+    }
+
   </style>
   <body>
     <h1>Registration form</h1>
     <form action="">
-      <label for="">First Name:</label>
-      <input type="text" />
-      <hr />
-      <br />
-      <br />
-      <label for="">Last Name:</label>
-      <input type="text" />
-      <hr />
-      <br />
-      <br />
-      <label for="">Email:</label>
-      <input type="text" />
-      <hr />
-      <br />
-      <br />
-      <label> Gender : </label>
-      <input type="radio" name="gender" /> Male
-      <input type="radio" name="gender" /> Female <br />
-      <hr />
-      <br />
-      <label for="">Age:</label>
-      <input type="text" />
-      <hr />
-      <br /><br />
-      <label for="">Phone Number:</label>
-      <input type="text" />
-      <br /><br />
-
-      <label for="">Address:</label>
-      <textarea name="address" cols="30" rows="3"> </textarea>
-      <br />
-      <br />
-      <label for="">State:</label>
-      <input type="text" />
-      <br /><br />
-      <label> Language known : </label>
-      <input type="checkbox" name="Language known" /> Hindi
-      <input type="checkbox" name="Language known" /> English
-      <input type="checkbox" name="Language known" /> Kannada
-      <input type="checkbox" name="Language known" /> Telugu <br />
-      <br />
-      <input type="checkbox" name="Language known" /> Hereby I declare all the
-      given details are true <br /><br />
-      <button>Register</button>
+      <table>
+        <tr>
+          <td class="label1"><label for="">First Name:</label></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">Last Name:</label></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">Email:</label></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td class="label1"><label>Gender:</label></td>
+          <td>
+            <input type="radio" name="gender" /> Male
+            <input type="radio" name="gender" /> Female
+          </td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">Age:</label></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">Phone Number:</label></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">Address:</label></td>
+          <td><textarea name="address" cols="30" rows="3"></textarea></td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">State:</label></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td class="label1"><label>Language known:</label></td>
+          <td>
+            <input type="checkbox" name="Language known" /> Hindi
+            <input type="checkbox" name="Language known" /> English
+            <input type="checkbox" name="Language known" /> Kannada
+            <input type="checkbox" name="Language known" /> Telugu
+          </td>
+        </tr>
+        <tr>
+          <td class="label1"><label for="">Country:</label></td>
+          <td>
+            <select name="country" style="width: fit-content;">
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="India">India</option>
+              <option value="UK">UK</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"> <input type="checkbox" name="Language known" /> Hereby I declare all the given details are true </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: end;"> Log into <a href="">Ethnus </a>website </td>
+        </tr>
+      </table>
     </form>
+    <div class="button">
+      <button style="align-items: center;">Register</button>
+    </div>
   </body>
 </html>
