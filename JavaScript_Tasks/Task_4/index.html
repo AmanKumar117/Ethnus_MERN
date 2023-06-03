@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="main-content">
+        <div class="header">
+          <img
+            src="https://www.pngitem.com/pimgs/m/132-1327993_instagram-logo-word-png-transparent-png.png"
+          />
+        </div>
+        <div class="l-part">
+          <input type="text" id="username" placeholder="Username" class="input-1" />
+          <div class="overlap-text">
+            <input type="password" id="password" placeholder="Password" class="input-2" />
+          </div>
+          <input type="button" value="Log in" class="btn" onclick="validateForm()" />
+        </div>
+        <div style="margin-top: 10px">
+          <input type="checkbox" />Remember me
+          <a href="#" style="margin-left: 20px">Forgot Password?</a>
+        </div>
+      </div>
+      <div class="sub-content">
+        <div class="s-part">
+          Don't have an account?<a href="#">Sign up here</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username === "") {
+          alert("Please enter a username");
+          return false;
+        }
+
+        if (password === "") {
+          alert("Please enter a password");
+          return false;
+        }
+
+        // Additional validation logic can be added here if needed
+
+        // If form is valid, proceed with login
+        alert("login succesful");
+      }
+    </script>
+  </body>
+</html>
