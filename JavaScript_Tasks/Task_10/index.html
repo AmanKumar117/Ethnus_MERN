@@ -1,48 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h3 id="concat"></h3>
+    <p id="concat_ele1"></p>
+    <p id="concat_ele2"></p>
+    <p id="concat_ele3"></p>
+    <h3 id="copyWithin"></h3>
+    <p id="copyWithin_ele1"></p>
+    <p id="copyWithin_ele2"></p>
+    <h3 id="maping"></h3>
+    <p id="maping_ele"></p>
+    <h3 id="every"></h3>
+    <p id="every_ele"></p>
+    <h3 id="some"></h3>
+    <p id="some_ele"></p>
+    <h3 id="filter"></h3>
+    <p id="filter_ele"></p>
+    <h3 id="find"></h3>
+    <p id="find_ele"></p>
+    <h3 id="findIndex"></h3>
+    <p id="findIndex_ele1"></p>
+    <p id="findIndex_ele2"></p>
+    <h3 id="indexOf"></h3>
+    <p id="indexOf_ele"></p>
+    <h3 id="lastIndex"></h3>
+    <p id="lastIndex_ele"></p>
+    <h3 id="push"></h3>
+    <p id="push_ele"></p>
+    <h3 id="pop"></h3>
+    <p id="pop_ele"></p>
+    <h3 id="shift"></h3>
+    <p id="shift_ele"></p>
     <script>
-        // concat method
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
-const newArray = array1.concat(array2);
-console.log(newArray); // Output: [1, 2, 3, 4, 5, 6]
+      // concat method
+      const array1 = [1, 2, 3];
+      const array2 = [4, 5, 6];
+      const newArray = array1.concat(array2);
+      console.log(newArray); // Output: [1, 2, 3, 4, 5, 6]
+      document.getElementById("concat").textContent = "Concat method:";
+      document.getElementById("concat_ele1").textContent = "array1: " + array1;
+      document.getElementById("concat_ele2").textContent = "array2: " + array2;
+      document.getElementById("concat_ele3").textContent =
+        "concatenated array: " + newArray;
 
+      const numbers = [1, 2, 3, 4, 5];
+      document.getElementById("copyWithin").textContent = "copyWithin method:";
+      document.getElementById("copyWithin_ele1").textContent =
+        "numbers: " + numbers;
+      numbers.copyWithin(0, 3); // Copies values from index 3 to the beginning of the array
+      console.log(numbers); // Output: [4, 5, 3, 4, 5]
+      document.getElementById("copyWithin_ele2").textContent =
+        "after using copyWithin(0,3): " + numbers;
 
-const numbers = [1, 2, 3, 4, 5];
-numbers.copyWithin(0, 3); // Copies values from index 3 to the beginning of the array
-console.log(numbers); // Output: [4, 5, 3, 4, 5]
+      // map method
+      let numbers1 = [1, 2, 3, 4, 5];
+      document.getElementById("maping").textContent = "map method:";
+      const multipliedNumbers = numbers1.map((num) => num * 2);
+      console.log(multipliedNumbers); // Output: [2, 4, 6, 8, 10]
+      document.getElementById("maping_ele").textContent =
+        "using map method to multiply array elements by 2: " +
+        multipliedNumbers;
 
-// map method
-numbers = [1, 2, 3, 4, 5];
-const multipliedNumbers = numbers.map(num => num * 2);
-console.log(multipliedNumbers); // Output: [2, 4, 6, 8, 10]
+      // every method
+      document.getElementById("every").textContent = "every method:";
+      const allEven = numbers1.every((num) => num % 2 === 0);
+      console.log(allEven); // Output: false
+      document.getElementById("every_ele").textContent =
+        "using every method to find if all numbers are even: " + allEven;
 
-// every method
-numbers = [1, 2, 3, 4, 5];
-const allEven = numbers.every(num => num % 2 === 0);
-console.log(allEven); // Output: false
+      // some method
+      document.getElementById("some").textContent = "some method:";
+      const hasEven = numbers1.some((num) => num % 2 === 0);
+      console.log(hasEven); // Output: true
+      document.getElementById("some_ele").textContent =
+        "using some method to find if some numbers are even: " + hasEven;
 
-// some method
-numbers = [1, 2, 3, 4, 5];
-const hasEven = numbers.some(num => num % 2 === 0);
-console.log(hasEven); // Output: true
+      // filter method
+      document.getElementById("filter").textContent = "filter method:";
+      const evenNumbers = numbers1.filter((num) => num % 2 === 0);
+      console.log(evenNumbers); // Output: [2, 4]
+      document.getElementById("filter_ele").textContent =
+        "using filter method to print even numbers: " + evenNumbers;
 
-// filter method
-numbers = [1, 2, 3, 4, 5];
-const evenNumbers = numbers.filter(num => num % 2 === 0);
-console.log(evenNumbers); // Output: [2, 4]
+      //find method
+      document.getElementById("find").textContent = "find method:";
+      const foundNumber = numbers.find((num) => num > 3);
+      console.log(foundNumber); // Output: 4
+      document.getElementById("find_ele").textContent =
+        "finding 1st number greater than 3: " + foundNumber;
 
-numbers = [1, 2, 3, 4, 5];
-const foundNumber = numbers.find(num => num > 3);
-console.log(foundNumber); // Output: 4
+      //findIndex method
+      const ages = [3, 10, 18, 20];
+      document.getElementById('findIndex').textContent= "findIndex mtthod:";
+      document.getElementById('findIndex_ele1').innerHTML = "ages: "+ages+ " , now finding(index) age grater than 18";
+      document.getElementById('findIndex_ele2').innerHTML = ages.findIndex(checkAge);
 
+      function checkAge(age) {
+        return age > 18;
+      }
+
+      //indexOf method
+      document.getElementById('indexOf').textContent= "indexOf mtthod:";
+      document.getElementById('indexOf_ele').innerHTML = "index of element 18: "+ ages.indexOf(18);
+
+      //lastIndexOf method
+      const nums = [1,2,3,4,1,5];
+      document.getElementById('lastIndex').textContent= "lastIndexOf mtthod:";
+      document.getElementById('lastIndex_ele').innerHTML = "last index of element 1 in array: "+nums+" is: "+ nums.lastIndexOf(1);
+
+      //push method
+      document.getElementById("push").textContent = "push method:";
+      numbers1.push(6);
+      console.log(numbers1);
+      document.getElementById("push_ele").textContent =
+        "numbers after pushing 6 into array: " + numbers1;
+
+      //pop method
+      document.getElementById("pop").textContent = "pop method:";
+      numbers1.pop();
+      console.log(numbers1);
+      document.getElementById("pop_ele").textContent =
+        "array after pop(): " + numbers1;
+
+      //shift method
+      document.getElementById("shift").textContent = "shift method:";
+      numbers1.shift();
+      console.log(numbers1);
+      document.getElementById("shift_ele").textContent =
+        "array after shift(): " + numbers1;
     </script>
-</body>
+  </body>
 </html>
